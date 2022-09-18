@@ -31,5 +31,18 @@ public class AppCorrelativas {
             System.out.println(unNumero);
         };
     }
+
+    /* OTRA FORMA DE EJECUTARLO SIN USAR AUTOWIRED es usando el atributo como parametro en ComandLineRuner*/
+    // para eso elimino el atributo AutoWired
+    /*
+    @Bean
+    public CommandLineRunner ejemplo(RepoMateria unaMteria) {
+        return (cosas) -> {
+            mate.save(new Materia("SO"));
+            System.out.println(unNumero);
+        };
+    }
+     */
+
 }
 
