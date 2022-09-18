@@ -11,9 +11,10 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class AppCorrelativas {
 
+    /* --> esta variable lo reemplazo como atributo en la linea PULBLIC COMMANDLINE...
     @Autowired
     private RepoMaterias mate;
-
+    */
     @Value("${algo}") /*mecanismo basico para meter valores! usando ressources -> application.properties*/
     private int unNumero;
 
@@ -25,9 +26,9 @@ public class AppCorrelativas {
     }
 
     @Bean
-    public CommandLineRunner ejemplo() {
+    public CommandLineRunner ejemplo(RepoMateriaEnMemoria repo) {
         return (cosas) -> {
-            mate.save(new Materia("SO"));
+            repo.save(new Materia("SO"));
             System.out.println(unNumero);
         };
     }
