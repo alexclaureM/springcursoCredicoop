@@ -25,7 +25,12 @@ public class Materia {
 	public void setCorrelativas(Collection<Materia> correlativas) {
 		this.correlativas = correlativas;
 	}
-	
-	
 
+	@Override
+	public String toString() {
+		return "Materia{" +
+				"nombre='" + nombre + '\'' +
+				", correlativas=" + correlativas +
+				'}';
+	}
 }
