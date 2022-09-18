@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class AppCorrelativas {
 
-    @Autowired
+    @Autowired /*esta anotacion puedo establecer dependecias*/
     private RepoMaterias mate;
 
     @Value("${algo}") /*mecanismo basico para meter valores! usando ressources -> application.properties*/
