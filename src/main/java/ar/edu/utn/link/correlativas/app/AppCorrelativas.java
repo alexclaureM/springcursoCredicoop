@@ -18,6 +18,9 @@ public class AppCorrelativas {
     @Value("${algo}") /*mecanismo basico para meter valores! usando ressources -> application.properties*/
     private int unNumero;
 
+    @Value("${path}")
+    private String path;
+
     public static void main(String[] args) {
         SpringApplication.run(AppCorrelativas.class, args);
         /*a partir de aca levanto el servicio
@@ -28,8 +31,14 @@ public class AppCorrelativas {
     @Bean
     public CommandLineRunner ejemplo(RepoMateriaEnMemoria repo) {
         return (cosas) -> {
-            repo.save(new Materia("SO"));
+            repo.save(new Materia("SO",2));
+            repo.save(new Materia("Analisis II",2));
+            repo.save(new Materia("Fisica",2));
+            repo.save(new Materia("Algoritmo",1));
+            repo.save(new Materia("DDS",3));
+
             System.out.println(unNumero);
+            System.out.println(path);
         };
     }
 }
