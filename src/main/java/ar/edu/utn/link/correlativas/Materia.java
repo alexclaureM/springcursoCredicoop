@@ -1,17 +1,21 @@
 package ar.edu.utn.link.correlativas;
 
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 
 public class Materia {
-	
+
+	@NotBlank
 	private String nombre;
 	@Min(1)
 	private int anio;
 	private Collection<Materia> correlativas;
 	
 	public Materia(){
-
+	// los objetos en HIBERNATE que ayudaban a que funcione -> se necesita un CONSTRUCTOR vacio
+		// LO MISMO PASA PARA SPRING, se necesita un constructor VACIO
+		// debido al CONTRATO DE BUILD
 	}
 
 	public Materia(String nombre, int anio) {

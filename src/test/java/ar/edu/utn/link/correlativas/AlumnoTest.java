@@ -10,7 +10,7 @@ public class AlumnoTest {
 	public void testInscripcionOK() throws Exception {
 		// Pre
 		Alumno alumno = new Alumno("Ezequiel");
-		Curso curso = new Curso( new Materia("SO"),2022  );
+		Curso curso = new Curso(new Materia("SO",1),2022  );
 				
 		//operatoria
 		alumno.inscribir(curso);

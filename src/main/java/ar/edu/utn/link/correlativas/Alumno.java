@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.List;
 
 public class Alumno {
-	
 
 	private String nombre;
 	private List<Curso> cursos;
