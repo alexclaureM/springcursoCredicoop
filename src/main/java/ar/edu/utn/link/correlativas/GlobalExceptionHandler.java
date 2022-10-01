@@ -1,4 +1,4 @@
-package ar.edu.utn.link.correlativas.app;
+package ar.edu.utn.link.correlativas;
 
 import ar.edu.utn.link.correlativas.app.materia.MateriaRepetidaException;
 import org.springframework.http.HttpStatus;

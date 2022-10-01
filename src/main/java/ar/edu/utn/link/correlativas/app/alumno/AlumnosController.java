@@ -12,7 +12,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/alumnos")
 public class AlumnosController {
-    @Autowired
+    @Autowired(required = true)
     RepoAlumnos repoAl;
 
     @GetMapping(path = {"", "/"})
@@ -32,4 +32,6 @@ public class AlumnosController {
             return "Materia generada.";
         }
     }
+
+
 }
