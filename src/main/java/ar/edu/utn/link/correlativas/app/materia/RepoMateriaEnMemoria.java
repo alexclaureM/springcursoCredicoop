@@ -1,6 +1,6 @@
 package ar.edu.utn.link.correlativas.app.materia;
 
-import ar.edu.utn.link.correlativas.model.Materia;
+import ar.edu.utn.link.correlativas.app.model.Materia;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -9,6 +9,10 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+/*
+ESTE REPOMATERIA YA NO SE UTILIZARIA
+
 
 @Repository
 public class RepoMateriaEnMemoria implements RepoMaterias  {
@@ -29,15 +33,16 @@ public class RepoMateriaEnMemoria implements RepoMaterias  {
         //System.out.println("Materia: "+ unaMateria);
     }
 
-    /*CLASE 22/9 */
-
+*/
+/*
     public List<Materia> all(){
         return this.materias;
     }
 
-    /*ESTO NO SE VA A USAR SEGUIDO, PERO ES PARA MOSTRAR Y EJEMPLIFICAR COMO YO LE DOY
+    ESTO NO SE VA A USAR SEGUIDO, PERO ES PARA MOSTRAR Y EJEMPLIFICAR COMO YO LE DOY
     * UN CRITERIO A LA HORA DE MOSTRAR LOS DATOS
-    * le digo : traeme 'x' datos , por cada pagina de toda la lista de Materias que haya*/
+    * le digo : traeme 'x' datos , por cada pagina de toda la lista de Materias que haya
+
     public Page<Materia> page(Pageable page){
         int desde = page.getPageNumber() * page.getPageSize();
         List<Materia> sublist2 = this.materias.subList(desde, desde + page.getPageSize());
@@ -62,3 +67,4 @@ public class RepoMateriaEnMemoria implements RepoMaterias  {
     }
 
 }
+*/

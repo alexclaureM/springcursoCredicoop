@@ -1,6 +1,6 @@
 package ar.edu.utn.link.correlativas.app.alumno;
 
-import ar.edu.utn.link.correlativas.model.Alumno;
+import ar.edu.utn.link.correlativas.app.model.Alumno;
 import ar.edu.utn.link.correlativas.app.materia.MateriaRepetidaException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+
+/*
+ESTE REPOALUMNO EN MEMORIA YA NO SE UTILIZARIA!!!
 
 @Repository
 public class RepoAlumnosEnMemoria implements RepoAlumnos {
@@ -28,15 +31,14 @@ public class RepoAlumnosEnMemoria implements RepoAlumnos {
 
     }
 
-    /*CLASE 22/9 */
-
     public List<Alumno> all(){
         return this.alumnos;
     }
 
-    /*ESTO NO SE VA A USAR SEGUIDO, PERO ES PARA MOSTRAR Y EJEMPLIFICAR COMO YO LE DOY
+    ESTO NO SE VA A USAR SEGUIDO, PERO ES PARA MOSTRAR Y EJEMPLIFICAR COMO YO LE DOY
      * UN CRITERIO A LA HORA DE MOSTRAR LOS DATOS
-     * le digo : traeme 'x' datos , por cada pagina de toda la lista de Materias que haya*/
+     * le digo : traeme 'x' datos , por cada pagina de toda la lista de Materias que haya
+
     public Page<Alumno> page(Pageable page){
         int desde = page.getPageNumber() * page.getPageSize();
         List<Alumno> sublist2 = this.alumnos.subList(desde, desde + page.getPageSize());
@@ -54,4 +56,6 @@ public class RepoAlumnosEnMemoria implements RepoAlumnos {
         long count = this.alumnos.stream().filter(x->x.getNombre().equals(nombre)).count();
         return count >0;
     }
+
 }
+ */

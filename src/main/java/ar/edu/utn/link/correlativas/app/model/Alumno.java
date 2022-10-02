@@ -1,12 +1,26 @@
-package ar.edu.utn.link.correlativas.model;
+package ar.edu.utn.link.correlativas.app.model;
 
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
 
+@Entity
+@Table(name = "alumno")
 public class Alumno {
 
+	@Id
+	@GeneratedValue(strategy =GenerationType.AUTO)
+	private Long id;
+
+	@Column(name = "nombre")
 	private String nombre;
+
+	@Column(name = "apellido")
+	private String apellido;
+
+	@Transient
 	private List<Curso> cursos;
+	@Transient
 	private Collection<Materia>  materiasAprovadas;
 	
 		
@@ -14,7 +28,10 @@ public class Alumno {
 		super();
 		this.nombre = nombre;
 	}
-	
+
+	public Alumno() {
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -32,6 +49,14 @@ public class Alumno {
 	}
 	public void setMateriasAprovadas(Collection<Materia> materiasAprovadas) {
 		this.materiasAprovadas = materiasAprovadas;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getApellido() {
+		return apellido;
 	}
 
 	public void inscribir(Curso curso) {

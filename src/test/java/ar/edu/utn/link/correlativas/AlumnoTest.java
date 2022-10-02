@@ -2,9 +2,9 @@ package ar.edu.utn.link.correlativas;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import ar.edu.utn.link.correlativas.model.Alumno;
-import ar.edu.utn.link.correlativas.model.Curso;
-import ar.edu.utn.link.correlativas.model.Materia;
+import ar.edu.utn.link.correlativas.app.model.Alumno;
+import ar.edu.utn.link.correlativas.app.model.Curso;
+import ar.edu.utn.link.correlativas.app.model.Materia;
 import org.junit.jupiter.api.Test;
 
 public class AlumnoTest {

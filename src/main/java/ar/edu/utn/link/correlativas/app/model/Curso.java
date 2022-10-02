@@ -1,4 +1,4 @@
-package ar.edu.utn.link.correlativas.model;
+package ar.edu.utn.link.correlativas.app.model;
 
 import java.util.HashSet;
 import java.util.Set;

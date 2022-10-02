@@ -1,22 +1,23 @@
 package ar.edu.utn.link.correlativas.app;
 
-import ar.edu.utn.link.correlativas.model.Alumno;
-import ar.edu.utn.link.correlativas.model.Materia;
+import ar.edu.utn.link.correlativas.app.model.Alumno;
+import ar.edu.utn.link.correlativas.app.model.Materia;
 import ar.edu.utn.link.correlativas.app.alumno.RepoAlumnos;
-import ar.edu.utn.link.correlativas.app.materia.RepoMaterias;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
 @SpringBootApplication
 public class AppCorrelativas {
 
-    /* --> esta variable lo reemplazo como atributo en la linea PULBLIC COMMANDLINE...
     @Autowired
-    private RepoMaterias mate;
-    */
+    RepositoryRestConfiguration config;
+    //en este caso me servira para traer los ID, pero tiene otras funcionalidades
+
     @Value("${algo}") /*mecanismo basico para meter valores! usando ressources -> application.properties*/
     private int unNumero;
 
@@ -32,7 +33,9 @@ public class AppCorrelativas {
     }
 
     @Bean
-    public CommandLineRunner ejemplo(RepoMaterias repo, RepoAlumnos repoAlumno) {
+    public CommandLineRunner init(RepoMateriaJPA repo, RepoAlumnoJPA repoAlumno) {
+        config.exposeIdsFor(Materia.class,Alumno.class);
+
         return (cosas) -> {
             repo.save(new Materia("SO",2));
             repo.save(new Materia("Analisis II",2));

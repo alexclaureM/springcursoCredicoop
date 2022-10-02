@@ -1,6 +1,6 @@
 package ar.edu.utn.link.correlativas.app.alumno;
 
-import ar.edu.utn.link.correlativas.model.Alumno;
+import ar.edu.utn.link.correlativas.app.model.Alumno;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
