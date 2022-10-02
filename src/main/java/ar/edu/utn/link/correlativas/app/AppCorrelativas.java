@@ -1,9 +1,8 @@
 package ar.edu.utn.link.correlativas.app;
 
-import ar.edu.utn.link.correlativas.Alumno;
-import ar.edu.utn.link.correlativas.Materia;
+import ar.edu.utn.link.correlativas.model.Alumno;
+import ar.edu.utn.link.correlativas.model.Materia;
 import ar.edu.utn.link.correlativas.app.alumno.RepoAlumnos;
-import ar.edu.utn.link.correlativas.app.materia.RepoMateriaEnMemoria;
 import ar.edu.utn.link.correlativas.app.materia.RepoMaterias;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;

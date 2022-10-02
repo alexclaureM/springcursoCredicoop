@@ -1,4 +1,4 @@
-package ar.edu.utn.link.correlativas;
+package ar.edu.utn.link.correlativas.model;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;

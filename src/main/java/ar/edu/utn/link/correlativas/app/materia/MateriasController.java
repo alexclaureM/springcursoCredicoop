@@ -1,6 +1,6 @@
 package ar.edu.utn.link.correlativas.app.materia;
 
-import ar.edu.utn.link.correlativas.Materia;
+import ar.edu.utn.link.correlativas.model.Materia;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
