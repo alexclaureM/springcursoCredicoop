@@ -1,0 +1,47 @@
+
+DTO: usabamos este concepto para filtrar que es lo que le queremos mostrar al cliente
+DTO: es una forma para evitar usar todos los elementos de las clases , solo utilizo lo necesario
+    debido a que si utilizo todo y llamo a referencias a cada uno de ellos, se me llena la memoria
+
+
+proyecciones: ES LO QUE NOS DsA SPRING
+que voy a mostra de un objeto dado?
+ -> creo clase DTOAlumno
+
+ --> agregar apellido para hacer pruebitas
+ -- y constructor donde lo contemple e instanciarlos en
+
+
+ Navegador se conecta mediante el protocolo HTTP 8080 --> a la App que corre uno o mas servicios
+ entonces la base de datos mediante el puerto 3306 de mysql / 9000 postgres
+
+ --> entonces recordemos, hay capas ... del navegador  a la app es x un puerto
+ y para acceder a la base de datos es x otro puerto
+ --> no se puede acceder directamente del navegador a la base de datos de un mismo puerto
+
+el cliente se conecta a la api y la api a la base de datos
+ ---------------------------------
+
+mediante application.properties
+    * le digo el puerto, la base de datos, que tipo de base de datos
+   y recien con esto me conecto al a bbdd
+
+JPA basicamente es el ORM -- JAVA PERSISTENCE API --
+
+JDBC --> forma en la cual se comunica con una SQL
+    ES UNA ESPECIFICACION O CONJUNTO DE INTERFACES
+    no tienen implementancion
+        entonces cada uno hace su reinterpretacion
+        MYSQL --> implementa un driver JDBC
+        ORACLE
+        DB2
+        POSTGRES
+JPA tambien es una especificaion, pero de ORM, de como persistir objetos
+JPA es un proveedor ORM
+    --> entityManager ==> @Entity
+  * hibernate  ==> Session / SessionFactory
+  * EclipseLink ==> se llamara de otra forma
+
+
+
+

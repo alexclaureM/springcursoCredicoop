@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
+
+// no lo usariamos mas --> usamos REPOMATEERIAJPA
 @Repository
 public interface RepoMaterias {
     public void save(Materia unaMateria) throws MateriaRepetidaException;

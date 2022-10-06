@@ -1,6 +1,9 @@
 package ar.edu.utn.link.correlativas.app.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -19,17 +22,24 @@ public class Alumno {
 	private String apellido;
 
 	@Transient
+	@JsonIgnore
 	private List<Curso> cursos;
-	@Transient
-	private Collection<Materia>  materiasAprovadas;
+	@ManyToMany // le debo matchear donde estara la foreig key
+	private Collection<Materia>  materiasAprobadas;
 	
 		
 	public Alumno(String nombre) {
-		super();
+		this();
 		this.nombre = nombre;
 	}
-
+	/*
+	public Alumno(String nombre, String apellido){
+		this.nombre = nombre;
+		this.apellido=apellido;
+	}
+*/
 	public Alumno() {
+		this.materiasAprobadas=new ArrayList<>();
 	}
 
 	public String getNombre() {
@@ -44,11 +54,11 @@ public class Alumno {
 	public void setCursos(List<Curso> cursos) {
 		this.cursos = cursos;
 	}
-	public Collection<Materia> getMateriasAprovadas() {
-		return  materiasAprovadas;
+	public Collection<Materia> getMateriasAprobadas() {
+		return  materiasAprobadas;
 	}
 	public void setMateriasAprovadas(Collection<Materia> materiasAprovadas) {
-		this.materiasAprovadas = materiasAprovadas;
+		this.materiasAprobadas = materiasAprovadas;
 	}
 
 	public Long getId() {

@@ -10,6 +10,8 @@ import org.springframework.data.rest.core.annotation.RestResource;
 /*esta clase reemplazara a RepoMateriaEnMemoria*/
 /*debemos confirugar un path*/
 @RepositoryRestResource(path = "materias") // nos ahorramos el tema del get-post
+// al tener esa esta anotacion, nos expone un Controller com ABM completa
+
 public interface RepoMateriaJPA extends JpaRepository<Materia, Long > {
     /*JpaReposory tendra 2 elementos: UNO, la entidad que MANIPULAREMOS-MATERIA
     * y la otra entidad, el tipo de la ID*/
