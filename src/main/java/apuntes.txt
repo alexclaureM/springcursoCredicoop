@@ -43,5 +43,67 @@ JPA es un proveedor ORM
   * EclipseLink ==> se llamara de otra forma
 
 
+--------------------------------------- 6-10-22
+
+yo le tengo que decir a la app si debo borrar o no
+y el borrado se debe hacer en objetos persistentes
+
+ademas el borrado de la base de datos es algo del negocio
 
 
+cuando ejecuto un metodo al objeto
+x.actualizar() con cascadas bien configuradas
+    * no hace falta hacerle un persist
+con tenerle una anotacion @transactional es suficiente
+
+-------------------
+el error 500 de POSTMAN es un error de get. que quiere traer algo pero no puede
+
+
+------------------------------------------
+POSTMAN
+{
+    "nombre": "unamateriaFlopa",
+    "anio":2,
+    "correlativas":[
+        {
+            "id":2,
+            "nombre": "DDS"
+        }
+    ]
+}
+
+SI QUIERO INGRESAR UN POST a correlativas uno espara otra materia
+pero no peudo pasarle por datos de la materia o solo por el id
+sino por el link referenciado
+: --> "http://localhost:8080/materias/2"
+
+
+----------------------------------
+como envio datos a los metodos post-put-delete?
+con BODY - QUERYPARAMS - URL
+
+
+veamos en este caso las correlativas que son medio chosco
+GET /materias/14
+post / correltativas?materiaId=14&correlativa=1
+post / correlativas?materiaId=14&correlativa=12
+
+   otra forma
+  post /materias/{materiaId}/correlativas
+       body -> {materiaId=14}
+       al body lo manejo yo como lo quiero enviar
+-------------------------------------
+no hace falta el save o persist, por que spring lo hace solo si tengo
+todo bien hecho
+
+
+-------------------------------------
+en MateriasControllerComplement
+van los codigos para validar cosas
+hasta cierto punto se encarga esta clase
+una vez que tengo los objetos listos, todos los demas deberian ser validaciones
+de capas de negocios
+ya que por ejemplo yo quiero solo agregar correlativas pero validaciones
+como: materias ya existente , materia ya es correlativa, etc etc etc
+deberian estar en la capa del dominio

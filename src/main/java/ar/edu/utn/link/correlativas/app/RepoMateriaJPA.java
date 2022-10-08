@@ -25,6 +25,10 @@ public interface RepoMateriaJPA extends JpaRepository<Materia, Long > {
     /*esto ya devuelve una pagina!*/
     Materia findByNombre(String nombreMateria);
 
+    /*esto no hace la baja de la materia
+    * pero debido a que JPAREPOSOTY expone todas las funciones
+    * alguien externo puede eliminar algo de la base de datos
+    * entonces con estas funciones overradeadas limino para que esto no se exponga*/
     @Override
     @RestResource(exported=false) // para evitar que no se mande automaticamente
     void deleteById(Long id);
@@ -32,4 +36,7 @@ public interface RepoMateriaJPA extends JpaRepository<Materia, Long > {
     @Override
     @RestResource(exported=false)
     void delete(Materia id);
+
+    /* necesito crear o tener una implementacion a la baja de datos */
+    /* HIBERNATE NOS DA ALGO PARA HACER ESTA IMPLEMENTACION DE LAS BAJAS*/
 }
