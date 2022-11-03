@@ -19,7 +19,6 @@ public class MateriasControllerUI {
             Optional<Materia> materiaOpcional = repo.findById(materiaId);
             model.addAttribute("materiaId",materiaId);
             return "materia";
-
         }
 
     @GetMapping("/materia")
